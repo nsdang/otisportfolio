@@ -584,4 +584,9 @@ figure figcaption {
   background: url(../images/hourglass.svg) center no-repeat #ffffff;
 }
 
+.fit-image {
+  width: 100%;
+  height: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
