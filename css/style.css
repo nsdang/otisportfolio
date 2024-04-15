@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  font-family: "Roboto", arial, sans-serif;
+  font-family: "Playfair Display", times, serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.8;
@@ -20,33 +20,6 @@ body.fh5co-overflow {
   overflow-x: auto;
 }
 
-body:before, body:after {
-  content: "";
-  position: fixed;
-  background: #fef7ec;
-  left: 0;
-  right: 0;
-  height: 20px;
-  z-index: 1002;
-}
-@media screen and (max-width: 768px) {
-  body:before, body:after {
-    display: none;
-  }
-}
-
-body:before {
-  top: 0;
-}
-
-body:after {
-  bottom: 0;
-}
-
-body {
-  border-left: 20px solid #fef7ec;
-  border-right: 20px solid #fef7ec;
-}
 @media screen and (max-width: 768px) {
   body {
     border-left: 0;
@@ -85,7 +58,6 @@ a:hover, a:focus, a:active {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", times, serif;
   color: #000;
-  margin-bottom: 1.5em;
   clear: both;
 }
 
@@ -587,6 +559,83 @@ figure figcaption {
 .fit-image {
   width: 100%;
   height: auto;
+}
+
+/* New CSS for 3-column layout and top menu */
+.container {
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.fh5co-top-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 100;
+}
+
+.fh5co-top-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fh5co-top-menu ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.fh5co-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 0 0 33.33%; /* Each column takes 1/3 of the container */
+  padding: 0 15px;
+}
+
+.column img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .column {
+      flex: 0 0 100%; /* Each column takes full width on smaller screens */
+  }
+}
+
+/* Style for the main navigation */
+#fh5co-main-nav {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+}
+
+#fh5co-main-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+#fh5co-main-nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#fh5co-main-nav ul li a {
+  text-decoration: none;
+  color: #333; 
+  font-weight: bold;
+  font-size: 16px; 
+  font-family: "Playfair Display", times, serif;
+  transition: color 0.3s ease;
+}
+
+#fh5co-main-nav ul li a:hover {
+  color: #999999; /* Change color on hover */
 }
 
 /*# sourceMappingURL=style.css.map */
