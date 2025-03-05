@@ -290,6 +290,46 @@
       });
   }
 
+  function generateModel(){
+	// Get the container where the images should be inserted
+	const container = document.getElementById("model");
+
+	// Skip if the container is not found
+	if (!container) {
+	  console.warn(
+		"Container element not found, skipping image generation."
+	  );
+	  return; // Skip the rest of the function if the container doesn't exist
+	}
+
+	// Get the project name from the URL query parameter (e.g., ?project=anh_nguyen_1)
+	const urlParams = new URLSearchParams(window.location.search);
+	const projectNameParam = urlParams.get("project");
+	switch(projectNameParam){
+		case "anh_nguyen_1": 
+		case "anh_nguyen_2":
+			container.textContent = `ANH NGUYEN`;
+            break;
+		case "hang_tran_1":
+			container.textContent = `HANG TRAN`;
+            break;
+		case "kaila_1":
+			container.textContent = `KAILA`;
+            break;
+		case "man_nghi_1":
+			container.textContent = `MAN NGHI`;
+            break;
+		case "nhi_tang_1":
+			container.textContent = `NHI TANG`;
+            break;
+		case "truc_pham_1":
+			container.textContent = `TRUC PHAM`;
+            break;
+		default:
+			break;
+	}
+  }
+
   function generateProjectColumn() {
     // Path to your JSON file
     const jsonFilePath = "imagesList.json";
@@ -382,6 +422,7 @@
     loaderPage();
     magnifPopup();
     generateProjects();
+	generateModel();
     //generateProjectRow();
     generateProjectColumn();
     // Animations
