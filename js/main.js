@@ -80,17 +80,82 @@
 
 	};
 
+	// Function to dynamically generate and insert columns
+	var generateColumns = function() {
+		const projectsData = [
+			[
+				{ image: "images/anh_nguyen_1/IMG_1412.JPG", redirectUrls: "pages/project.html?project=anh_nguyen_1" },
+				{ image: "images/man_nghi_1/IMG_6240.jpeg", redirectUrls: "pages/project.html?project=man_nghi_1" },
+				{ image: "images/horizontal_image_placeholder.svg", redirectUrls: "pages/project.html?project=horizontal_image_placeholder" }
+			],
+			[
+				{ image: "images/hang_tran_1/IMG_2733.jpg", redirectUrls: "pages/project.html?project=hang_tran_1" },
+				{ image: "images/anh_nguyen_2/IMG_5678.jpg", redirectUrls: "pages/project.html?project=anh_nguyen_2" },
+				{ image: "images/kaila_1/IMG_1206.jpg", redirectUrls: "pages/project.html?project=kaila_1" },
+				{ image: "images/square_image_placeholder.svg", redirectUrls: "pages/project.html?project=square_image_placeholder" }
+			],
+			[
+				{ image: "images/nhi_tang_1/IMG_1746.JPG", redirectUrls: "pages/project.html?project=nhi_tang_1" },
+				{ image: "images/truc_pham_1/IMG_2960.jpg", redirectUrls: "pages/project.html?project=truc_pham_1" },
+				{ image: "images/horizontal_image_placeholder.svg", redirectUrls: "pages/project.html?project=horizontal_image_placeholder" },
+				{ image: "images/horizontal_image_placeholder.svg", redirectUrls: "pages/project.html?project=horizontal_image_placeholder" },
+				{ image: "images/horizontal_image_placeholder.svg", redirectUrls: "pages/project.html?project=horizontal_image_placeholder" }
+			]
+		];			
+
+		// Get the container where columns should be inserted
+		const container = document.getElementById('columns-container');
+
+		// Loop through the projectsData and create the HTML structure dynamically
+		projectsData.forEach((columnData) => {
+			const columnDiv = document.createElement('div');
+			columnDiv.classList.add('column');
+
+			columnData.forEach((project) => {
+				const itemDiv = document.createElement('div');
+				itemDiv.classList.add('fh5co-item');
+				
+				// Create anchor element for redirection
+				const linkElement = document.createElement('a');
+				linkElement.href = project.redirectUrls;
+
+				// Create image element
+				const imgElement = document.createElement('img');
+				imgElement.classList.add('fit-image');
+				imgElement.src = project.image;
+				imgElement.alt = "";
+
+				// Create text wrap div
+				const textWrapDiv = document.createElement('div');
+				textWrapDiv.classList.add('fh5co-item-text-wrap');
+
+				const textDiv = document.createElement('div');
+				textDiv.classList.add('fh5co-item-text');
+
+				// Append text and image to the anchor tag
+				textWrapDiv.appendChild(textDiv);
+				linkElement.appendChild(imgElement);
+				linkElement.appendChild(textWrapDiv);
+
+				// Append the anchor to the item div
+				itemDiv.appendChild(linkElement);
+				columnDiv.appendChild(itemDiv);
+			});
+
+			// Append the column div to the container
+			container.appendChild(columnDiv);
+		});
+	};
 
 	// Document on load.
 	$(function(){
 		loaderPage();
 		magnifPopup();
-		
-		// Animations
-		contentWayPoint();
-		
-		
+		generateColumns(); // Add the dynamic image columns
 
+		// Animations
+		contentWayPoint();		
+		
 	});
 
 
