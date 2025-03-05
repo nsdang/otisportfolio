@@ -416,6 +416,7 @@ p {
 
 .fh5co-col-2 {
   position: relative; /* Make the parent container relative */
+  margin-top: 15px;
 }
 
 .credit {
@@ -423,7 +424,6 @@ p {
   bottom: 0;          /* Position at the bottom of the parent */
   right: 15px;           /* Position at the right of the parent */
   padding: 0;
-  margin-bottom: 5px;
 }
 
 #model {
