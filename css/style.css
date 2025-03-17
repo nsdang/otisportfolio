@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  font-family: "Playfair Display", times, serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.8;
@@ -56,7 +56,7 @@ a:hover, a:focus, a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", times, serif;
+  font-family: "Helvetica", sans-serif;
   color: #000;
   clear: both;
 }
@@ -257,6 +257,7 @@ p {
 
 #fh5co-main {
   padding: 3.5em 0 7em 0;
+  width: fit-content;
 }
 @media screen and (max-width: 768px) {
   #fh5co-main {
@@ -315,6 +316,7 @@ p {
 .fh5co-grid .fh5co-col-1,
 .fh5co-grid .fh5co-col-2 {
   width: 50%;
+  padding-left: 15px;
 }
 @media screen and (max-width: 480px) {
   .fh5co-grid .fh5co-col-1,
@@ -585,9 +587,10 @@ figure figcaption {
 
 /* New CSS for 3-column layout and top menu */
 .container {
-  max-width: 1200px; /* Adjust max-width as needed */
+  max-width: 100%; /* Adjust max-width as needed */
   margin: 0 auto;
   padding: 0 15px;
+  width: 100vw;
 }
 
 .fh5co-top-menu {
@@ -612,6 +615,8 @@ figure figcaption {
 .fh5co-grid {
   display: flex;
   flex-wrap: wrap;
+  max-width: 100%;
+  width: 100vw;
 }
 
 .column {
@@ -652,7 +657,7 @@ figure figcaption {
   color: #333; 
   font-weight: bold;
   font-size: 16px; 
-  font-family: "Playfair Display", times, serif;
+  font-family: "Helvetica", sans-serif;
   transition: color 0.3s ease;
 }
 
